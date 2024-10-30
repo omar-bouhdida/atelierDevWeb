@@ -17,4 +17,7 @@ Route::get('/contact', function () {
 //     return view('etudiant',compact('nom','prenom'));
 // });
 
-Route::get('/etudiant', [EtudiantController::class,"index"]);
+// Route::get('/etudiant', [EtudiantController::class,"index"]);
+Route::get('/etudiant', [EtudiantController::class,"index"])->name('etudiant');
+Route::get('/create', [EtudiantController::class,"create"])->name('etudiant.create');
+Route::post('/create', [EtudiantController::class,"store"])->name('etudiant.ajouter');
