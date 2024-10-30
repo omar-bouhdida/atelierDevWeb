@@ -37,15 +37,17 @@
         <th>Prenom</th>
         <th width="280px">Action</th>
     </tr>
+    @foreach($liste as $value)
     <tr>
-        <td>1</td>
-        <td>BOUHDIDA</td>
-        <td>Omar</td>
+        <td>{{$value->id}}</td>
+        <td>{{$value->nom}}</td>
+        <td>{{$value->prenom}}</td>
         <td>
             <a class="btn btn-info" href="#">Show</a>
             <a class="btn btn-primary" href="#">Edit</a>
             <button type="submit" class="btn btn-danger">Delete</button>
         </td>
     </tr>
+    @endforeach
 </table>
 @endsection
