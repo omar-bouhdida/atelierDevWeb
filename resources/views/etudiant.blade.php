@@ -35,19 +35,22 @@
         <th>Numéro</th>
         <th>Nom</th>
         <th>Prenom</th>
+        <th>Classe</th>
         <th width="280px">Action</th>
     </tr>
-    @foreach($liste as $value)
+    @foreach ($liste as $value)
     <tr>
-        <td>{{$value->id}}</td>
-        <td>{{$value->nom}}</td>
-        <td>{{$value->prenom}}</td>
+        <td>{{ $loop->index }}</td>
+        <td>{{ $value->nom }}</td>
+        <td>{{ $value->prenom }}</td>
+        <td>{{ $value->classe ? $value->classe->libelle : 'N/A' }}</td>
         <td>
             <a class="btn btn-info" href="#">Show</a>
-            <a class="btn btn-primary" href="#">Edit</a>
+            <a class="btn btn-primary" href="{{ route('etudiant.edit', $value->id) }}">Edit</a>
             <button type="submit" class="btn btn-danger">Delete</button>
         </td>
     </tr>
     @endforeach
 </table>
+
 @endsection
