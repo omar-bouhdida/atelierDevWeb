@@ -45,9 +45,14 @@
         <td>{{ $value->prenom }}</td>
         <td>{{ $value->classe ? $value->classe->libelle : 'N/A' }}</td>
         <td>
+            <form action="{{ route('etudiant.delete', $value->id)}}" method="post">
             <a class="btn btn-info" href="#">Show</a>
             <a class="btn btn-primary" href="{{ route('etudiant.edit', $value->id) }}">Edit</a>
+            @csrf
+            @method('DELETE')
+            <input type="hidden" name="_method" value="delete">
             <button type="submit" class="btn btn-danger">Delete</button>
+            </form>
         </td>
     </tr>
     @endforeach

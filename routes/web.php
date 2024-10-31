@@ -25,3 +25,4 @@ Route::post('/create', [EtudiantController::class,"store"])->name('etudiant.ajou
 
 Route::put('/etudiant/{etudiant}',[EtudiantController::class,"update"])->name('etudiant.update');
 Route::get('/etudiant/{etudiant}',[EtudiantController::class,"edit"])->name('etudiant.edit');
+Route::delete('/delete/{etudiant}',[EtudiantController::class,"delete"])->name('etudiant.delete');

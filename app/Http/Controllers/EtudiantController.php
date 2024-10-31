@@ -58,4 +58,11 @@ class EtudiantController extends Controller
         return redirect()->route('etudiant.index') // Assumes route name for index is 'etudiant.index'
                          ->with('success', 'Student created successfully.');
     }
+
+    public function delete(Etudiant $etudiant){
+        $etudiant->delete();
+        return redirect()->route('etudiant')
+                        ->with('success','Post deleted.');
+    }
+    
 }
