@@ -64,5 +64,4 @@ class EtudiantController extends Controller
         return redirect()->route('etudiant')
                         ->with('success','Post deleted.');
     }
-    
 }
